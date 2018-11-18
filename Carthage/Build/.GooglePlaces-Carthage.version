@@ -1,0 +1,9 @@
+{
+  "commitish" : "2.7.0",
+  "iOS" : [
+    {
+      "name" : "GooglePlaces",
+      "hash" : "9cf9d6a9fa5cc1c85aa4a1b59b7481b3911a62e61937cd5f26a9f61a137c96fe"
+    }
+  ]
+}

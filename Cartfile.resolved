@@ -1,0 +1,5 @@
+github "Alamofire/Alamofire" "4.7.3"
+github "Alamofire/AlamofireImage" "3.4.1"
+github "SwiftyJSON/SwiftyJSON" "4.2.0"
+github "danitinez/GoogleMaps-Carthage" "2.7.0"
+github "danitinez/GooglePlaces-Carthage" "2.7.0"
