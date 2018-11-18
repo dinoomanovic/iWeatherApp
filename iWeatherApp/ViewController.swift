@@ -11,6 +11,7 @@ import Alamofire
 import AlamofireImage
 import SwiftyJSON
 import GooglePlaces
+import NVActivityIndicatorView
 
 class ViewController: UIViewController {
     @IBOutlet weak var titleText: UILabel!
@@ -31,11 +32,16 @@ class ViewController: UIViewController {
         autocompleteController.delegate = self
         present(autocompleteController, animated: true, completion: nil)
     }
+    @IBOutlet weak var progressBar: NVActivityIndicatorView!
+    
     private let APPID = "14c1ad343b75d7f6fbe4f14fd766f0f7"
     private let unit = "metric"
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        progressBar.color = UIColor.blue
+        progressBar.type = NVActivityIndicatorType.circleStrokeSpin
+        progressBar.startAnimating()
         GMSPlacesClient.provideAPIKey("AIzaSyAEcRoM-h3AXb5MxaEwMNGvpyTfQpU-xN0")
         getWeather(cityName: "Tuzla,BA")
         // Do any additional setup after loading the view, typically from a nib.
@@ -91,7 +97,7 @@ class ViewController: UIViewController {
                     self.dayTwo.text = dayTwoDesc
                     self.dayThree.text = dayThreeDesc
                     self.currentWeatherDescription.text = currentDesc
-                    
+                    self.progressBar.stopAnimating()
                 }
         }
     }
@@ -174,6 +180,7 @@ extension ViewController: GMSAutocompleteViewControllerDelegate {
     // Handle the user's selection.
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
         print("Place name: \(place.name)")
+        self.progressBar.startAnimating()
         let location = CLLocation(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
         CLGeocoder().reverseGeocodeLocation(location) { placemarks, error in
             

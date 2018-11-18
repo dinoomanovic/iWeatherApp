@@ -38,6 +38,8 @@
 		2C2A0CCB1F6D8FEF00F3C36B /* iWeatherAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2A0CCA1F6D8FEF00F3C36B /* iWeatherAppUITests.swift */; };
 		2C31A5F41F770E19003D0350 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C31A5F11F770E19003D0350 /* Alamofire.framework */; };
 		2C31A5F51F770E19003D0350 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C31A5F21F770E19003D0350 /* AlamofireImage.framework */; };
+		2C3DFDD021A195CA0010CB7F /* NVActivityIndicatorView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2C1E1DB021A1931E0039046D /* NVActivityIndicatorView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2C3DFDD221A195CA0010CB7F /* NVActivityIndicatorViewAppExtension.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2C1E1DB121A1931F0039046D /* NVActivityIndicatorViewAppExtension.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,8 +66,10 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				2C3DFDD221A195CA0010CB7F /* NVActivityIndicatorViewAppExtension.framework in Embed Frameworks */,
 				2C21AC5A1F779B8D004E03A2 /* Alamofire.framework in Embed Frameworks */,
 				2C21AC5E1F779B9E004E03A2 /* AlamofireImage.framework in Embed Frameworks */,
+				2C3DFDD021A195CA0010CB7F /* NVActivityIndicatorView.framework in Embed Frameworks */,
 				2C21AC611F779BAF004E03A2 /* SwiftyJSON.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -92,6 +96,8 @@
 		2C1E1D9E21A1465C0039046D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		2C1E1D9F21A1465C0039046D /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		2C1E1DA021A1465C0039046D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2C1E1DB021A1931E0039046D /* NVActivityIndicatorView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NVActivityIndicatorView.framework; path = Carthage/Build/iOS/NVActivityIndicatorView.framework; sourceTree = "<group>"; };
+		2C1E1DB121A1931F0039046D /* NVActivityIndicatorViewAppExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NVActivityIndicatorViewAppExtension.framework; path = Carthage/Build/iOS/NVActivityIndicatorViewAppExtension.framework; sourceTree = "<group>"; };
 		2C21AC581F779B8D004E03A2 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		2C21AC5C1F779B9E004E03A2 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
 		2C21AC5F1F779BAF004E03A2 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
@@ -161,6 +167,8 @@
 		2C2A0C9E1F6D8FEE00F3C36B = {
 			isa = PBXGroup;
 			children = (
+				2C1E1DB021A1931E0039046D /* NVActivityIndicatorView.framework */,
+				2C1E1DB121A1931F0039046D /* NVActivityIndicatorViewAppExtension.framework */,
 				2C1E1D9021A145C20039046D /* GooglePlaces.bundle */,
 				2C1E1D8C21A1456F0039046D /* GooglePlaces.framework */,
 				2C1E1D8A21A1454E0039046D /* GoogleMapsBase.framework */,
