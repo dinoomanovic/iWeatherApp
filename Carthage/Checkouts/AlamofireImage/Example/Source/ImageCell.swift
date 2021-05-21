@@ -1,7 +1,7 @@
 //
 //  ImageCell.swift
 //
-//  Copyright (c) 2015-2018 Alamofire Software Foundation (http://alamofire.org/)
+//  Copyright (c) 2015 Alamofire Software Foundation (http://alamofire.org/)
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -27,8 +27,8 @@ import AlamofireImage
 import Foundation
 import UIKit
 
-class ImageCell : UICollectionViewCell {
-    class var ReuseIdentifier: String { return "org.alamofire.identifier.\(type(of: self))" }
+class ImageCell: UICollectionViewCell {
+    class var ReuseIdentifier: String { "org.alamofire.identifier.\(type(of: self))" }
     let imageView: UIImageView
 
     // MARK: - Initialization
@@ -51,28 +51,26 @@ class ImageCell : UICollectionViewCell {
         imageView.frame = contentView.bounds
     }
 
+    @available(*, unavailable)
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
     // MARK: - Lifecycle Methods
 
-    func configureCell(with URLString: String, placeholderImage: UIImage) {
+    func configureCell(with urlString: String, placeholderImage: UIImage) {
         let size = imageView.frame.size
 
-        imageView.af_setImage(
-            withURL: URL(string: URLString)!,
-            placeholderImage: placeholderImage,
-            filter: AspectScaledToFillSizeWithRoundedCornersFilter(size: size, radius: 20.0),
-            imageTransition: .crossDissolve(0.2)
-        )
+        imageView.af_setImage(withURL: URL(string: urlString)!,
+                              placeholderImage: placeholderImage,
+                              filter: AspectScaledToFillSizeWithRoundedCornersFilter(size: size, radius: 20.0),
+                              imageTransition: .crossDissolve(0.3))
     }
 
     override func prepareForReuse() {
         super.prepareForReuse()
 
         imageView.af_cancelImageRequest()
-        imageView.layer.removeAllAnimations()
         imageView.image = nil
     }
 }

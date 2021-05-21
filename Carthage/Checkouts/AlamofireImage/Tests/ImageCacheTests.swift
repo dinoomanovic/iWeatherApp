@@ -1,7 +1,7 @@
 //
 //  ImageCacheTests.swift
 //
-//  Copyright (c) 2015-2018 Alamofire Software Foundation (http://alamofire.org/)
+//  Copyright (c) 2015 Alamofire Software Foundation (http://alamofire.org/)
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -27,7 +27,7 @@
 import Foundation
 import XCTest
 
-class ImageCacheTestCase: BaseTestCase {
+final class ImageCacheTestCase: BaseTestCase {
     var cache: AutoPurgingImageCache!
 
     // MARK: - Setup and Teardown
@@ -39,10 +39,8 @@ class ImageCacheTestCase: BaseTestCase {
             let memoryCapacity: UInt64 = 100 * 1024 * 1024 // 10 MB
             let preferredSizeAfterPurge: UInt64 = 60 * 1024 * 1024 // 4 MB
 
-            return AutoPurgingImageCache(
-                memoryCapacity: memoryCapacity,
-                preferredMemoryUsageAfterPurge: preferredSizeAfterPurge
-            )
+            return AutoPurgingImageCache(memoryCapacity: memoryCapacity,
+                                         preferredMemoryUsageAfterPurge: preferredSizeAfterPurge)
         }()
     }
 
@@ -78,7 +76,7 @@ class ImageCacheTestCase: BaseTestCase {
     func testThatItCanAddImageToCacheWithRequestIdentifier() {
         // Given
         let image = self.image(forResource: "unicorn", withExtension: "png")
-        let request = try! URLRequest(url: "https://images.example.com/animals", method: .get)
+        let request = Endpoint.get.urlRequest
         let identifier = "-unicorn"
 
         // When
@@ -116,7 +114,7 @@ class ImageCacheTestCase: BaseTestCase {
         // Given
         let unicornImage = image(forResource: "unicorn", withExtension: "png")
         let pirateImage = image(forResource: "pirate", withExtension: "jpg")
-        let request = try! URLRequest(url: "https://images.example.com/animals", method: .get)
+        let request = Endpoint.get.urlRequest
         let identifier = "animal"
 
         // When
@@ -158,7 +156,7 @@ class ImageCacheTestCase: BaseTestCase {
     func testThatItCanRemoveImageFromCacheWithRequestIdentifier() {
         // Given
         let image = self.image(forResource: "unicorn", withExtension: "png")
-        let request = try! URLRequest(url: "https://images.example.com/animals", method: .get)
+        let request = Endpoint.get.urlRequest
         let identifier = "unicorn"
 
         // When
@@ -177,7 +175,7 @@ class ImageCacheTestCase: BaseTestCase {
     func testThatItCanRemoveImagesFromCacheMatchingRequestIdentifier() {
         // Given
         let image = self.image(forResource: "unicorn", withExtension: "png")
-        let request = try! URLRequest(url: "https://images.example.com/animals", method: .get)
+        let request = Endpoint.get.urlRequest
 
         let identifier1 = "unicorn-100"
         let identifier2 = "unicorn-400"
@@ -219,7 +217,7 @@ class ImageCacheTestCase: BaseTestCase {
         XCTAssertFalse(cachedImageExistsAfterRemoval, "cached image exists after removal should be false")
     }
 
-#if os(iOS) || os(tvOS)
+    #if os(iOS) || os(tvOS)
 
     func testThatItRemovesAllImagesFromCacheWhenReceivingMemoryWarningNotification() {
         // Given
@@ -230,16 +228,9 @@ class ImageCacheTestCase: BaseTestCase {
         cache.add(image, withIdentifier: identifier)
         let cachedImageExists = cache.image(withIdentifier: identifier) != nil
 
-        #if swift(>=4.2)
         let notification = UIApplication.didReceiveMemoryWarningNotification
-        #else
-        let notification = Notification.Name.UIApplicationDidReceiveMemoryWarning
-        #endif
 
-        NotificationCenter.default.post(
-            name: notification,
-            object: nil
-        )
+        NotificationCenter.default.post(name: notification, object: nil)
 
         let cachedImageExistsAfterNotification = cache.image(withIdentifier: identifier) != nil
 
@@ -248,7 +239,7 @@ class ImageCacheTestCase: BaseTestCase {
         XCTAssertFalse(cachedImageExistsAfterNotification, "cached image exists after notification should be false")
     }
 
-#endif
+    #endif
 
     // MARK: - Fetch Image Tests
 
@@ -270,7 +261,7 @@ class ImageCacheTestCase: BaseTestCase {
     func testThatItCanFetchImageFromCacheWithRequestIdentifier() {
         // Given
         let image = self.image(forResource: "unicorn", withExtension: "png")
-        let request = try! URLRequest(url: "https://images.example.com/animals", method: .get)
+        let request = Endpoint.get.urlRequest
         let identifier = "unicorn"
 
         // When
@@ -297,7 +288,7 @@ class ImageCacheTestCase: BaseTestCase {
 
         // Then
         XCTAssertEqual(initialMemoryUsage, 0, "initial memory usage should be 0")
-        XCTAssertEqual(currentMemoryUsage, 164000, "current memory usage should be 164000")
+        XCTAssertEqual(currentMemoryUsage, 164_000, "current memory usage should be 164000")
     }
 
     func testThatItDecrementsMemoryUsageWhenRemovingImageFromCache() {
@@ -312,7 +303,7 @@ class ImageCacheTestCase: BaseTestCase {
         let currentMemoryUsage = cache.memoryUsage
 
         // Then
-        XCTAssertEqual(initialMemoryUsage, 164000, "initial memory usage should be 164000")
+        XCTAssertEqual(initialMemoryUsage, 164_000, "initial memory usage should be 164000")
         XCTAssertEqual(currentMemoryUsage, 0, "current memory usage should be 0")
     }
 
@@ -328,7 +319,7 @@ class ImageCacheTestCase: BaseTestCase {
         let currentMemoryUsage = cache.memoryUsage
 
         // Then
-        XCTAssertEqual(initialMemoryUsage, 164000, "initial memory usage should be 164000")
+        XCTAssertEqual(initialMemoryUsage, 164_000, "initial memory usage should be 164000")
         XCTAssertEqual(currentMemoryUsage, 0, "current memory usage should be 0")
     }
 
@@ -350,8 +341,8 @@ class ImageCacheTestCase: BaseTestCase {
         memoryUsage = Array(memoryUsage.dropFirst(638))
 
         // Then
-        XCTAssertEqual(memoryUsage[0], 104796000, "memory usage prior to purge does not match expected value")
-        XCTAssertEqual(memoryUsage[1], 62812000, "memory usage after purge does not match expected value")
+        XCTAssertEqual(memoryUsage[0], 104_796_000, "memory usage prior to purge does not match expected value")
+        XCTAssertEqual(memoryUsage[1], 62_812_000, "memory usage after purge does not match expected value")
     }
 
     func testThatItPrioritizesImagesWithOldestLastAccessDatesDuringPurge() {
@@ -402,5 +393,29 @@ class ImageCacheTestCase: BaseTestCase {
             let cachedImage = cache.image(withIdentifier: "\(identifier)-\(index)")
             XCTAssertNotNil(cachedImage, "cached image with identifier: \"\(identifier)-\(index)\" should not be nil")
         }
+    }
+}
+
+final class ImageCacheThreadSafetyTests: BaseTestCase {
+    func testMultipleReadsAndWrites() {
+        // Given
+        let cache = AutoPurgingImageCache(memoryCapacity: 1_000_000, preferredMemoryUsageAfterPurge: 100_000)
+        let image = self.image(forResource: "unicorn", withExtension: "png")
+
+        // When
+        DispatchQueue.concurrentPerform(iterations: 100) { iteration in
+            DispatchQueue.concurrentPerform(iterations: 100) { _ in
+                cache.add(image, withIdentifier: "\(iteration)")
+            }
+            DispatchQueue.concurrentPerform(iterations: 100) { _ in
+                _ = cache.image(withIdentifier: "\(iteration)")
+            }
+            DispatchQueue.concurrentPerform(iterations: 100) { _ in
+                cache.removeImage(withIdentifier: "\(iteration)")
+            }
+        }
+
+        // Then
+        XCTAssertNil(cache.image(withIdentifier: "99"))
     }
 }

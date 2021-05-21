@@ -31,7 +31,8 @@ class ViewController: UIViewController {
         let autocompleteController = GMSAutocompleteViewController()
         autocompleteController.delegate = self
         present(autocompleteController, animated: true, completion: nil)
-    }
+    }    
+
     @IBOutlet weak var progressBar: NVActivityIndicatorView!
     
     private let APPID = "14c1ad343b75d7f6fbe4f14fd766f0f7"
@@ -42,7 +43,6 @@ class ViewController: UIViewController {
         progressBar.color = UIColor.blue
         progressBar.type = NVActivityIndicatorType.circleStrokeSpin
         progressBar.startAnimating()
-        GMSPlacesClient.provideAPIKey("AIzaSyAEcRoM-h3AXb5MxaEwMNGvpyTfQpU-xN0")
         getWeather(cityName: "Tuzla,BA")
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -53,10 +53,10 @@ class ViewController: UIViewController {
     }
     
     func getWeather(cityName: String) {
-        Alamofire.request("https://api.openweathermap.org/data/2.5/forecast", parameters: ["q":cityName,"APPID":APPID,"units":unit])
+        AF.request("https://api.openweathermap.org/data/2.5/forecast", parameters: ["q":cityName,"APPID":APPID,"units":unit])
             .responseJSON {
                 response in
-                if let result = response.result.value {
+                if let result = response.data {
                     let json = JSON(result)
                     print(json)
                     let cityName = String(describing: json["city"]["name"])

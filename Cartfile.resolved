@@ -1,4 +1,4 @@
-github "Alamofire/Alamofire" "4.7.3"
-github "Alamofire/AlamofireImage" "3.4.1"
-github "SwiftyJSON/SwiftyJSON" "4.2.0"
-github "ninjaprox/NVActivityIndicatorView" "4.4.0"
+github "Alamofire/Alamofire" "5.4.3"
+github "Alamofire/AlamofireImage" "4.2.0"
+github "SwiftyJSON/SwiftyJSON" "5.0.1"
+github "ninjaprox/NVActivityIndicatorView" "5.1.1"

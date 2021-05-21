@@ -30,7 +30,7 @@ class DetailViewController: UITableViewController {
         case headers, body
     }
 
-    var request: Alamofire.Request? {
+    var request: Request? {
         didSet {
             oldValue?.cancel()
 
@@ -76,7 +76,7 @@ class DetailViewController: UITableViewController {
 
         let start = CACurrentMediaTime()
 
-        let requestComplete: (HTTPURLResponse?, Result<String>) -> Void = { response, result in
+        let requestComplete: (HTTPURLResponse?, Result<String, AFError>) -> Void = { response, result in
             let end = CACurrentMediaTime()
             self.elapsedTime = end - start
 
@@ -89,7 +89,7 @@ class DetailViewController: UITableViewController {
             if let segueIdentifier = self.segueIdentifier {
                 switch segueIdentifier {
                 case "GET", "POST", "PUT", "DELETE":
-                    self.body = result.value
+                    if case let .success(value) = result { self.body = value }
                 case "DOWNLOAD":
                     self.body = self.downloadedBodyString()
                 default:
@@ -117,11 +117,9 @@ class DetailViewController: UITableViewController {
         let cachesDirectory = fileManager.urls(for: .cachesDirectory, in: .userDomainMask)[0]
 
         do {
-            let contents = try fileManager.contentsOfDirectory(
-                at: cachesDirectory,
-                includingPropertiesForKeys: nil,
-                options: .skipsHiddenFiles
-            )
+            let contents = try fileManager.contentsOfDirectory(at: cachesDirectory,
+                                                               includingPropertiesForKeys: nil,
+                                                               options: .skipsHiddenFiles)
 
             if let fileURL = contents.first, let data = try? Data(contentsOf: fileURL) {
                 let json = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions())
@@ -153,7 +151,7 @@ extension DetailViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch Sections(rawValue: (indexPath as NSIndexPath).section)! {
+        switch Sections(rawValue: indexPath.section)! {
         case .headers:
             let cell = tableView.dequeueReusableCell(withIdentifier: "Header")!
             let field = headers.keys.sorted(by: <)[indexPath.row]
@@ -176,7 +174,7 @@ extension DetailViewController {
 
 extension DetailViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        2
     }
 
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -193,7 +191,7 @@ extension DetailViewController {
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch Sections(rawValue: (indexPath as NSIndexPath).section)! {
+        switch Sections(rawValue: indexPath.section)! {
         case .body:
             return 300
         default:

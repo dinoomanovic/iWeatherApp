@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -25,10 +25,6 @@
 		2C1E1DAD21A1465C0039046D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C1E1D9E21A1465C0039046D /* QuartzCore.framework */; };
 		2C1E1DAE21A1465C0039046D /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C1E1D9F21A1465C0039046D /* Accelerate.framework */; };
 		2C1E1DAF21A1465C0039046D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C1E1DA021A1465C0039046D /* CoreGraphics.framework */; };
-		2C21AC5A1F779B8D004E03A2 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2C21AC581F779B8D004E03A2 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		2C21AC5E1F779B9E004E03A2 /* AlamofireImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2C21AC5C1F779B9E004E03A2 /* AlamofireImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		2C21AC601F779BAF004E03A2 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C21AC5F1F779BAF004E03A2 /* SwiftyJSON.framework */; };
-		2C21AC611F779BAF004E03A2 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2C21AC5F1F779BAF004E03A2 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2C2A0CAB1F6D8FEE00F3C36B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2A0CAA1F6D8FEE00F3C36B /* AppDelegate.swift */; };
 		2C2A0CAD1F6D8FEE00F3C36B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2A0CAC1F6D8FEE00F3C36B /* ViewController.swift */; };
 		2C2A0CB01F6D8FEE00F3C36B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C2A0CAE1F6D8FEE00F3C36B /* Main.storyboard */; };
@@ -36,10 +32,18 @@
 		2C2A0CB51F6D8FEE00F3C36B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C2A0CB31F6D8FEE00F3C36B /* LaunchScreen.storyboard */; };
 		2C2A0CC01F6D8FEF00F3C36B /* iWeatherAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2A0CBF1F6D8FEF00F3C36B /* iWeatherAppTests.swift */; };
 		2C2A0CCB1F6D8FEF00F3C36B /* iWeatherAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2A0CCA1F6D8FEF00F3C36B /* iWeatherAppUITests.swift */; };
-		2C31A5F41F770E19003D0350 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C31A5F11F770E19003D0350 /* Alamofire.framework */; };
-		2C31A5F51F770E19003D0350 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C31A5F21F770E19003D0350 /* AlamofireImage.framework */; };
-		2C3DFDD021A195CA0010CB7F /* NVActivityIndicatorView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2C1E1DB021A1931E0039046D /* NVActivityIndicatorView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		2C3DFDD221A195CA0010CB7F /* NVActivityIndicatorViewAppExtension.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2C1E1DB121A1931F0039046D /* NVActivityIndicatorViewAppExtension.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2C84DFFD2656E2C300BCC2AD /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C84DFE32656E23000BCC2AD /* Alamofire.framework */; };
+		2C84DFFE2656E2C300BCC2AD /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2C84DFE32656E23000BCC2AD /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2C84E0092656E36100BCC2AD /* SwiftyJSON.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C84E0022656E31A00BCC2AD /* SwiftyJSON.xcframework */; };
+		2C84E00A2656E36100BCC2AD /* SwiftyJSON.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2C84E0022656E31A00BCC2AD /* SwiftyJSON.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2C84E00E2656E36600BCC2AD /* NVActivityIndicatorView.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C84E00D2656E36600BCC2AD /* NVActivityIndicatorView.xcframework */; };
+		2C84E00F2656E36600BCC2AD /* NVActivityIndicatorView.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2C84E00D2656E36600BCC2AD /* NVActivityIndicatorView.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2C84E0132656E36B00BCC2AD /* NVActivityIndicatorViewAppExtension.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C84E0122656E36B00BCC2AD /* NVActivityIndicatorViewAppExtension.xcframework */; };
+		2C84E0142656E36B00BCC2AD /* NVActivityIndicatorViewAppExtension.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2C84E0122656E36B00BCC2AD /* NVActivityIndicatorViewAppExtension.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2C84E0182656E37000BCC2AD /* NVActivityIndicatorViewExtended.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C84E0172656E37000BCC2AD /* NVActivityIndicatorViewExtended.xcframework */; };
+		2C84E0192656E37000BCC2AD /* NVActivityIndicatorViewExtended.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2C84E0172656E37000BCC2AD /* NVActivityIndicatorViewExtended.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2C84E06B2656E3FA00BCC2AD /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C84E0522656E3D300BCC2AD /* AlamofireImage.framework */; };
+		2C84E06C2656E3FA00BCC2AD /* AlamofireImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2C84E0522656E3D300BCC2AD /* AlamofireImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,20 +61,133 @@
 			remoteGlobalIDString = 2C2A0CA61F6D8FEE00F3C36B;
 			remoteInfo = iWeatherApp;
 		};
+		2C84DFE22656E23000BCC2AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C84DFD72656E23000BCC2AD /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8111E3319A95C8B0040E7D1;
+			remoteInfo = "Alamofire iOS";
+		};
+		2C84DFE42656E23000BCC2AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C84DFD72656E23000BCC2AD /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8111E3E19A95C8B0040E7D1;
+			remoteInfo = "Alamofire iOS Tests";
+		};
+		2C84DFE62656E23000BCC2AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C84DFD72656E23000BCC2AD /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4DD67C0B1A5C55C900ED2280;
+			remoteInfo = "Alamofire macOS";
+		};
+		2C84DFE82656E23000BCC2AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C84DFD72656E23000BCC2AD /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F829C6B21A7A94F100A2CD59;
+			remoteInfo = "Alamofire macOS Tests";
+		};
+		2C84DFEA2656E23000BCC2AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C84DFD72656E23000BCC2AD /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4CF626EF1BA7CB3E0011A099;
+			remoteInfo = "Alamofire tvOS";
+		};
+		2C84DFEC2656E23000BCC2AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C84DFD72656E23000BCC2AD /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4CF626F81BA7CB3E0011A099;
+			remoteInfo = "Alamofire tvOS Tests";
+		};
+		2C84DFEE2656E23000BCC2AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C84DFD72656E23000BCC2AD /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E4202FE01B667AA100C997FB;
+			remoteInfo = "Alamofire watchOS";
+		};
+		2C84DFF02656E23000BCC2AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C84DFD72656E23000BCC2AD /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 31293065263E17D600473CEA;
+			remoteInfo = "Alamofire watchOS Tests";
+		};
+		2C84E0512656E3D300BCC2AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C84E0462656E3D300BCC2AD /* AlamofireImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4C9043771AABBFC5001B4E60;
+			remoteInfo = "AlamofireImage iOS";
+		};
+		2C84E0532656E3D300BCC2AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C84E0462656E3D300BCC2AD /* AlamofireImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4C9043821AABBFC5001B4E60;
+			remoteInfo = "AlamofireImage iOS Tests";
+		};
+		2C84E0552656E3D300BCC2AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C84E0462656E3D300BCC2AD /* AlamofireImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4CE611321AABC24E00D35044;
+			remoteInfo = "AlamofireImage macOS";
+		};
+		2C84E0572656E3D300BCC2AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C84E0462656E3D300BCC2AD /* AlamofireImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4CE611471AABC5C900D35044;
+			remoteInfo = "AlamofireImage macOS Tests";
+		};
+		2C84E0592656E3D300BCC2AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C84E0462656E3D300BCC2AD /* AlamofireImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4C16B37D1BA9399500A66EF0;
+			remoteInfo = "AlamofireImage tvOS";
+		};
+		2C84E05B2656E3D300BCC2AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C84E0462656E3D300BCC2AD /* AlamofireImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4C16B3861BA9399500A66EF0;
+			remoteInfo = "AlamofireImage tvOS Tests";
+		};
+		2C84E05D2656E3D300BCC2AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C84E0462656E3D300BCC2AD /* AlamofireImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4C4D4EC11B92976900C96855;
+			remoteInfo = "AlamofireImage watchOS";
+		};
+		2C84E05F2656E3D300BCC2AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C84E0462656E3D300BCC2AD /* AlamofireImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4C11830B2150517E007A8298;
+			remoteInfo = "iOS Example";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		2C21AC5B1F779B8D004E03A2 /* Embed Frameworks */ = {
+		2C84DFFF2656E2C300BCC2AD /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				2C3DFDD221A195CA0010CB7F /* NVActivityIndicatorViewAppExtension.framework in Embed Frameworks */,
-				2C21AC5A1F779B8D004E03A2 /* Alamofire.framework in Embed Frameworks */,
-				2C21AC5E1F779B9E004E03A2 /* AlamofireImage.framework in Embed Frameworks */,
-				2C3DFDD021A195CA0010CB7F /* NVActivityIndicatorView.framework in Embed Frameworks */,
-				2C21AC611F779BAF004E03A2 /* SwiftyJSON.framework in Embed Frameworks */,
+				2C84DFFE2656E2C300BCC2AD /* Alamofire.framework in Embed Frameworks */,
+				2C84E0142656E36B00BCC2AD /* NVActivityIndicatorViewAppExtension.xcframework in Embed Frameworks */,
+				2C84E00F2656E36600BCC2AD /* NVActivityIndicatorView.xcframework in Embed Frameworks */,
+				2C84E06C2656E3FA00BCC2AD /* AlamofireImage.framework in Embed Frameworks */,
+				2C84E0192656E37000BCC2AD /* NVActivityIndicatorViewExtended.xcframework in Embed Frameworks */,
+				2C84E00A2656E36100BCC2AD /* SwiftyJSON.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -117,6 +234,12 @@
 		2C31A5F11F770E19003D0350 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		2C31A5F21F770E19003D0350 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
 		2C31A5F31F770E19003D0350 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		2C84DFD72656E23000BCC2AD /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
+		2C84E0022656E31A00BCC2AD /* SwiftyJSON.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SwiftyJSON.xcframework; path = Carthage/Build/SwiftyJSON.xcframework; sourceTree = "<group>"; };
+		2C84E00D2656E36600BCC2AD /* NVActivityIndicatorView.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = NVActivityIndicatorView.xcframework; path = Carthage/Build/NVActivityIndicatorView.xcframework; sourceTree = "<group>"; };
+		2C84E0122656E36B00BCC2AD /* NVActivityIndicatorViewAppExtension.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = NVActivityIndicatorViewAppExtension.xcframework; path = Carthage/Build/NVActivityIndicatorViewAppExtension.xcframework; sourceTree = "<group>"; };
+		2C84E0172656E37000BCC2AD /* NVActivityIndicatorViewExtended.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = NVActivityIndicatorViewExtended.xcframework; path = Carthage/Build/NVActivityIndicatorViewExtended.xcframework; sourceTree = "<group>"; };
+		2C84E0462656E3D300BCC2AD /* AlamofireImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AlamofireImage.xcodeproj; path = AlamofireImage/AlamofireImage.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C1E1DA121A1465C0039046D /* ImageIO.framework in Frameworks */,
+				2C84DFFD2656E2C300BCC2AD /* Alamofire.framework in Frameworks */,
 				2C1E1DA221A1465C0039046D /* GLKit.framework in Frameworks */,
 				2C1E1DA321A1465C0039046D /* CoreImage.framework in Frameworks */,
 				2C1E1DA421A1465C0039046D /* CoreTelephony.framework in Frameworks */,
@@ -133,17 +257,19 @@
 				2C1E1DA721A1465C0039046D /* OpenGLES.framework in Frameworks */,
 				2C1E1DA821A1465C0039046D /* libz.tbd in Frameworks */,
 				2C1E1DA921A1465C0039046D /* CoreData.framework in Frameworks */,
+				2C84E0182656E37000BCC2AD /* NVActivityIndicatorViewExtended.xcframework in Frameworks */,
 				2C1E1DAA21A1465C0039046D /* UIKit.framework in Frameworks */,
 				2C1E1DAB21A1465C0039046D /* CoreText.framework in Frameworks */,
 				2C1E1DAC21A1465C0039046D /* libc++.tbd in Frameworks */,
 				2C1E1DAD21A1465C0039046D /* QuartzCore.framework in Frameworks */,
+				2C84E0132656E36B00BCC2AD /* NVActivityIndicatorViewAppExtension.xcframework in Frameworks */,
 				2C1E1DAE21A1465C0039046D /* Accelerate.framework in Frameworks */,
+				2C84E0092656E36100BCC2AD /* SwiftyJSON.xcframework in Frameworks */,
 				2C1E1DAF21A1465C0039046D /* CoreGraphics.framework in Frameworks */,
-				2C31A5F41F770E19003D0350 /* Alamofire.framework in Frameworks */,
 				2C1E1D8B21A1454E0039046D /* GoogleMapsBase.framework in Frameworks */,
-				2C21AC601F779BAF004E03A2 /* SwiftyJSON.framework in Frameworks */,
-				2C31A5F51F770E19003D0350 /* AlamofireImage.framework in Frameworks */,
 				2C1E1D8D21A1456F0039046D /* GooglePlaces.framework in Frameworks */,
+				2C84E00E2656E36600BCC2AD /* NVActivityIndicatorView.xcframework in Frameworks */,
+				2C84E06B2656E3FA00BCC2AD /* AlamofireImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +293,8 @@
 		2C2A0C9E1F6D8FEE00F3C36B = {
 			isa = PBXGroup;
 			children = (
+				2C84E0462656E3D300BCC2AD /* AlamofireImage.xcodeproj */,
+				2C84DFD72656E23000BCC2AD /* Alamofire.xcodeproj */,
 				2C1E1DB021A1931E0039046D /* NVActivityIndicatorView.framework */,
 				2C1E1DB121A1931F0039046D /* NVActivityIndicatorViewAppExtension.framework */,
 				2C1E1D9021A145C20039046D /* GooglePlaces.bundle */,
@@ -227,6 +355,10 @@
 		2C31A5F01F770E18003D0350 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2C84E0172656E37000BCC2AD /* NVActivityIndicatorViewExtended.xcframework */,
+				2C84E0122656E36B00BCC2AD /* NVActivityIndicatorViewAppExtension.xcframework */,
+				2C84E00D2656E36600BCC2AD /* NVActivityIndicatorView.xcframework */,
+				2C84E0022656E31A00BCC2AD /* SwiftyJSON.xcframework */,
 				2C1E1D9F21A1465C0039046D /* Accelerate.framework */,
 				2C1E1D9A21A1465B0039046D /* CoreData.framework */,
 				2C1E1DA021A1465C0039046D /* CoreGraphics.framework */,
@@ -249,6 +381,36 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		2C84DFD82656E23000BCC2AD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2C84DFE32656E23000BCC2AD /* Alamofire.framework */,
+				2C84DFE52656E23000BCC2AD /* Alamofire iOS Tests.xctest */,
+				2C84DFE72656E23000BCC2AD /* Alamofire.framework */,
+				2C84DFE92656E23000BCC2AD /* Alamofire macOS Tests.xctest */,
+				2C84DFEB2656E23000BCC2AD /* Alamofire.framework */,
+				2C84DFED2656E23000BCC2AD /* Alamofire tvOS Tests.xctest */,
+				2C84DFEF2656E23000BCC2AD /* Alamofire.framework */,
+				2C84DFF12656E23000BCC2AD /* Alamofire watchOS Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2C84E0472656E3D300BCC2AD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2C84E0522656E3D300BCC2AD /* AlamofireImage.framework */,
+				2C84E0542656E3D300BCC2AD /* AlamofireImage iOS Tests.xctest */,
+				2C84E0562656E3D300BCC2AD /* AlamofireImage.framework */,
+				2C84E0582656E3D300BCC2AD /* AlamofireImage macOS Tests.xctest */,
+				2C84E05A2656E3D300BCC2AD /* AlamofireImage.framework */,
+				2C84E05C2656E3D300BCC2AD /* AlamofireImage tvOS Tests.xctest */,
+				2C84E05E2656E3D300BCC2AD /* AlamofireImage.framework */,
+				2C84E0602656E3D300BCC2AD /* iOS Example.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -259,7 +421,7 @@
 				2C2A0CA31F6D8FEE00F3C36B /* Sources */,
 				2C2A0CA41F6D8FEE00F3C36B /* Frameworks */,
 				2C2A0CA51F6D8FEE00F3C36B /* Resources */,
-				2C21AC5B1F779B8D004E03A2 /* Embed Frameworks */,
+				2C84DFFF2656E2C300BCC2AD /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -318,7 +480,8 @@
 				TargetAttributes = {
 					2C2A0CA61F6D8FEE00F3C36B = {
 						CreatedOnToolsVersion = 8.3.3;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = 2QDJ5D23UZ;
+						ProvisioningStyle = Automatic;
 					};
 					2C2A0CBA1F6D8FEF00F3C36B = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -337,12 +500,23 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
 			mainGroup = 2C2A0C9E1F6D8FEE00F3C36B;
 			productRefGroup = 2C2A0CA81F6D8FEE00F3C36B /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 2C84DFD82656E23000BCC2AD /* Products */;
+					ProjectRef = 2C84DFD72656E23000BCC2AD /* Alamofire.xcodeproj */;
+				},
+				{
+					ProductGroup = 2C84E0472656E3D300BCC2AD /* Products */;
+					ProjectRef = 2C84E0462656E3D300BCC2AD /* AlamofireImage.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				2C2A0CA61F6D8FEE00F3C36B /* iWeatherApp */,
@@ -351,6 +525,121 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		2C84DFE32656E23000BCC2AD /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = 2C84DFE22656E23000BCC2AD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2C84DFE52656E23000BCC2AD /* Alamofire iOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Alamofire iOS Tests.xctest";
+			remoteRef = 2C84DFE42656E23000BCC2AD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2C84DFE72656E23000BCC2AD /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = 2C84DFE62656E23000BCC2AD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2C84DFE92656E23000BCC2AD /* Alamofire macOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Alamofire macOS Tests.xctest";
+			remoteRef = 2C84DFE82656E23000BCC2AD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2C84DFEB2656E23000BCC2AD /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = 2C84DFEA2656E23000BCC2AD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2C84DFED2656E23000BCC2AD /* Alamofire tvOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Alamofire tvOS Tests.xctest";
+			remoteRef = 2C84DFEC2656E23000BCC2AD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2C84DFEF2656E23000BCC2AD /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = 2C84DFEE2656E23000BCC2AD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2C84DFF12656E23000BCC2AD /* Alamofire watchOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Alamofire watchOS Tests.xctest";
+			remoteRef = 2C84DFF02656E23000BCC2AD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2C84E0522656E3D300BCC2AD /* AlamofireImage.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AlamofireImage.framework;
+			remoteRef = 2C84E0512656E3D300BCC2AD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2C84E0542656E3D300BCC2AD /* AlamofireImage iOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "AlamofireImage iOS Tests.xctest";
+			remoteRef = 2C84E0532656E3D300BCC2AD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2C84E0562656E3D300BCC2AD /* AlamofireImage.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AlamofireImage.framework;
+			remoteRef = 2C84E0552656E3D300BCC2AD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2C84E0582656E3D300BCC2AD /* AlamofireImage macOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "AlamofireImage macOS Tests.xctest";
+			remoteRef = 2C84E0572656E3D300BCC2AD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2C84E05A2656E3D300BCC2AD /* AlamofireImage.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AlamofireImage.framework;
+			remoteRef = 2C84E0592656E3D300BCC2AD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2C84E05C2656E3D300BCC2AD /* AlamofireImage tvOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "AlamofireImage tvOS Tests.xctest";
+			remoteRef = 2C84E05B2656E3D300BCC2AD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2C84E05E2656E3D300BCC2AD /* AlamofireImage.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AlamofireImage.framework;
+			remoteRef = 2C84E05D2656E3D300BCC2AD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		2C84E0602656E3D300BCC2AD /* iOS Example.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "iOS Example.app";
+			remoteRef = 2C84E05F2656E3D300BCC2AD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		2C2A0CA51F6D8FEE00F3C36B /* Resources */ = {
@@ -530,7 +819,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -542,19 +832,23 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2QDJ5D23UZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = iWeatherApp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = odin.iWeatherApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -564,19 +858,23 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2QDJ5D23UZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = iWeatherApp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = odin.iWeatherApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -586,7 +884,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = iWeatherAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = odin.iWeatherAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -600,7 +902,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = iWeatherAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = odin.iWeatherAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -613,7 +919,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = iWeatherAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = odin.iWeatherAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -626,7 +936,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = iWeatherAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = odin.iWeatherAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;

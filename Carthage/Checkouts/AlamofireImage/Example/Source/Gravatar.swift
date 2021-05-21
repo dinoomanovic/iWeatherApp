@@ -1,7 +1,7 @@
 //
 //  Gravatar.swift
 //
-//  Copyright (c) 2015-2018 Alamofire Software Foundation (http://alamofire.org/)
+//  Copyright (c) 2015 Alamofire Software Foundation (http://alamofire.org/)
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -25,8 +25,8 @@
 import Foundation
 import UIKit
 
-private extension String  {
-    var md5Hash: String {
+extension String {
+    fileprivate var md5Hash: String {
         let trimmedString = lowercased().trimmingCharacters(in: .whitespaces)
         let utf8String = trimmedString.cString(using: .utf8)!
         let stringLength = CC_LONG(trimmedString.lengthOfBytes(using: .utf8))
@@ -50,7 +50,7 @@ private extension String  {
 // MARK: - QueryItemConvertible
 
 private protocol QueryItemConvertible {
-    var queryItem: URLQueryItem {get}
+    var queryItem: URLQueryItem { get }
 }
 
 // MARK: -
@@ -59,25 +59,25 @@ public struct Gravatar {
     public enum DefaultImage: String, QueryItemConvertible {
         case http404 = "404"
         case mysteryMan = "mm"
-        case identicon = "identicon"
+        case identicon
         case monsterID = "monsterid"
-        case wavatar = "wavatar"
-        case retro = "retro"
-        case blank = "blank"
+        case wavatar
+        case retro
+        case blank
 
         var queryItem: URLQueryItem {
-            return URLQueryItem(name: "d", value: rawValue)
+            URLQueryItem(name: "d", value: rawValue)
         }
     }
 
     public enum Rating: String, QueryItemConvertible {
-        case g = "g"
-        case pg = "pg"
-        case r = "r"
-        case x = "x"
+        case g
+        case pg
+        case r
+        case x
 
         var queryItem: URLQueryItem {
-            return URLQueryItem(name: "r", value: rawValue)
+            URLQueryItem(name: "r", value: rawValue)
         }
     }
 
@@ -88,13 +88,11 @@ public struct Gravatar {
 
     private static let baseURL = URL(string: "https://secure.gravatar.com/avatar")!
 
-    public init(
-        emailAddress: String,
-        defaultImage: DefaultImage = .mysteryMan,
-        forceDefault: Bool = false,
-        rating: Rating = .pg)
-    {
-        self.email = emailAddress
+    public init(emailAddress: String,
+                defaultImage: DefaultImage = .mysteryMan,
+                forceDefault: Bool = false,
+                rating: Rating = .pg) {
+        email = emailAddress
         self.defaultImage = defaultImage
         self.forceDefault = forceDefault
         self.rating = rating
@@ -108,7 +106,7 @@ public struct Gravatar {
         if forceDefault {
             queryItems.append(URLQueryItem(name: "f", value: "y"))
         }
-        queryItems.append(URLQueryItem(name: "s", value: String(format: "%.0f",size * scale)))
+        queryItems.append(URLQueryItem(name: "s", value: String(format: "%.0f", size * scale)))
 
         components.queryItems = queryItems
 

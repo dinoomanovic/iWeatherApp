@@ -1,7 +1,7 @@
 //
 //  BaseTestCase.swift
 //
-//  Copyright (c) 2015-2018 Alamofire Software Foundation (http://alamofire.org/)
+//  Copyright (c) 2015 Alamofire Software Foundation (http://alamofire.org/)
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -27,34 +27,32 @@ import AlamofireImage
 import Foundation
 import XCTest
 
-class BaseTestCase : XCTestCase {
+class BaseTestCase: XCTestCase {
     let timeout = 5.0
-    var sessionManager: SessionManager!
+    var session: Session!
 
     // MARK: - Setup and Teardown
 
     override func setUp() {
         super.setUp()
 
-        sessionManager = {
+        session = {
             let configuration: URLSessionConfiguration = {
                 let configuration = URLSessionConfiguration.ephemeral
-
-                let defaultHeaders = SessionManager.default.session.configuration.httpAdditionalHeaders
-                configuration.httpAdditionalHeaders = defaultHeaders
+                configuration.httpAdditionalHeaders = HTTPHeaders.default.dictionary
 
                 return configuration
             }()
 
-            return SessionManager(configuration: configuration)
+            return Session(configuration: configuration)
         }()
     }
 
     override func tearDown() {
         super.tearDown()
 
-        sessionManager.session.finishTasksAndInvalidate()
-        sessionManager = nil
+        session.session.finishTasksAndInvalidate()
+        session = nil
     }
 
     // MARK: - Resources
@@ -69,9 +67,9 @@ class BaseTestCase : XCTestCase {
         let data = try! Data(contentsOf: resourceURL)
 
         #if os(iOS) || os(tvOS)
-            let image = Image.af_threadSafeImage(with: data, scale: UIScreen.main.scale)!
+        let image = Image.af.threadSafeImage(with: data, scale: UIScreen.main.scale)!
         #elseif os(macOS)
-            let image = Image(data: data)!
+        let image = Image(data: data)!
         #endif
 
         return image

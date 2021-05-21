@@ -1,7 +1,7 @@
 //
 //  ImageViewController.swift
 //
-//  Copyright (c) 2015-2018 Alamofire Software Foundation (http://alamofire.org/)
+//  Copyright (c) 2015 Alamofire Software Foundation (http://alamofire.org/)
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -26,7 +26,7 @@ import AlamofireImage
 import Foundation
 import UIKit
 
-class ImageViewController : UIViewController {
+class ImageViewController: UIViewController {
     var gravatar: Gravatar!
     var imageView: UIImageView!
 
@@ -53,12 +53,10 @@ class ImageViewController : UIViewController {
 
         let URL = gravatar.url(size: view.bounds.size.width)
 
-        imageView.af_setImage(
-            withURL: URL,
-            placeholderImage: nil,
-            filter: CircleFilter(),
-            imageTransition: .flipFromBottom(0.5)
-        )
+        imageView.af_setImage(withURL: URL,
+                              placeholderImage: nil,
+                              filter: CircleFilter(),
+                              imageTransition: .flipFromBottom(0.5))
 
         view.addSubview(imageView)
 
